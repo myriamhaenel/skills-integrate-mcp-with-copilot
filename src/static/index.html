@@ -8,9 +8,44 @@
   </head>
   <body>
     <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+      <div class="header-content">
+        <div>
+          <h1>Mergington High School</h1>
+          <h2>Extracurricular Activities</h2>
+        </div>
+        <div class="user-icon-container">
+          <button id="user-icon" class="user-icon" title="Login as teacher">👤</button>
+          <div id="user-info" class="user-info hidden">
+            <p>Logged in as: <strong id="logged-user">--</strong></p>
+            <button id="logout-btn">Logout</button>
+          </div>
+        </div>
+      </div>
     </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Teacher Login</h3>
+          <button class="close-btn" id="close-login">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="login-form">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" required placeholder="Enter username" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" required placeholder="Enter password" />
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+          </form>
+          <div id="login-message" class="hidden"></div>
+        </div>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
@@ -22,7 +57,7 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <h3 id="form-title">Sign Up for an Activity</h3>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -35,7 +70,7 @@
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" id="submit-btn">Sign Up</button>
         </form>
         <div id="message" class="hidden"></div>
       </section>
